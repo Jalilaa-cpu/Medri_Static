@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Medridatours</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Location de voitures à Essaouira, Maroc. Découvrez notre flotte de véhicules modernes avec climatisation, réservation simple via WhatsApp.">
+    <meta name="keywords" content="location voiture essaouira, car rental morocco, medridatours, essaouira car rental">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Medridatours - Location de Voitures à Essaouira">
+    <meta property="og:description" content="Location de voitures à Essaouira, Maroc. Découvrez notre flotte de véhicules modernes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://testserver/contact/">
+    <meta property="og:image" content="/static/images/logo.jpg">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <!-- Custom JavaScript -->
+    <script src="/static/js/main.js" defer></script>
+    
+    
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="text-2xl font-bold text-blue-600">
+                        Medridatours
+                    </a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Accueil
+                        </a>
+                        <a href="/fleet/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Notre Flotte
+                        </a>
+                        <a href="/about/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            À Propos
+                        </a>
+                        <a href="/contact/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-blue-600 focus:outline-none p-2 border border-gray-300 rounded">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+                
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/212629473725" target="_blank" class="hidden sm:inline-flex bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white border-t shadow-lg z-40" style="display: none;">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Accueil
+                </a>
+                <a href="/fleet/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Notre Flotte
+                </a>
+                <a href="/about/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    À Propos
+                </a>
+                <a href="/contact/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Contact
+                </a>
+                <a href="https://wa.me/212629473725" target="_blank" class="text-green-600 hover:text-green-700 block px-3 py-2 text-base font-medium">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="pt-16">
+        
+<!-- Header -->
+<section class="bg-blue-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                Contactez-Nous
+            </h1>
+            <p class="text-xl">
+                Nous sommes là pour vous aider avec votre réservation
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Info -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact Information -->
+            <div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Informations de Contact</h2>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-map-marker-alt text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">Adresse</h3>
+                            <p class="text-gray-600">
+                                Essaouira, Maroc<br>
+                                Proche du port et de la médina
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-phone text-green-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">Téléphone</h3>
+                            <p class="text-gray-600">
+                                <a href="tel:+212629473725" class="hover:text-blue-600">+212 629 473725</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fab fa-whatsapp text-green-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">WhatsApp</h3>
+                            <p class="text-gray-600 mb-2">
+                                Réservation rapide et simple via WhatsApp
+                            </p>
+                            <a href="https://wa.me/212629473725" target="_blank" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition-colors inline-block">
+                                <i class="fab fa-whatsapp mr-2"></i>
+                                Ouvrir WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-clock text-yellow-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">Horaires</h3>
+                            <p class="text-gray-600">
+                                Lundi - Dimanche: 8h00 - 22h00<br>
+                                Support d'urgence: 24h/24
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="mt-8 p-6 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-4">Actions Rapides</h3>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/212629473725?text=Bonjour Medridatours, je souhaite obtenir des informations sur vos véhicules." target="_blank" class="flex-1 bg-green-500 text-white text-center py-3 rounded-lg hover:bg-green-600 transition-colors">
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            Demander des Infos
+                        </a>
+                        <a href="/fleet/" class="flex-1 bg-blue-600 text-white text-center py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                            <i class="fas fa-car mr-2"></i>
+                            Voir la Flotte
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map -->
+            <div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-8">Notre Localisation</h2>
+                <div class="bg-gray-200 rounded-lg overflow-hidden" style="height: 400px;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3374.9623579896866!2d-9.7681!3d31.5125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdbc7b0c2f3b5b93%3A0x7b6f4b8e9e7d4c3a!2sEssaouira%2C%20Morocco!5e0!3m2!1sen!2s!4v1642345678901!5m2!1sen!2s" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p class="text-sm text-gray-600 mt-4">
+                    Nous nous trouvons au cœur d'Essaouira, facilement accessible depuis tous les quartiers de la ville.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                Questions Fréquentes
+            </h2>
+            <p class="text-xl text-gray-600">
+                Trouvez rapidement les réponses à vos questions
+            </p>
+        </div>
+        
+        <div class="space-y-6">
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-semibold mb-3">Comment puis-je réserver un véhicule ?</h3>
+                <p class="text-gray-600">
+                    Très simple ! Choisissez votre véhicule sur notre site, cliquez sur 'Réserver via WhatsApp' et envoyez-nous un message. Nous vous répondrons rapidement pour finaliser votre réservation.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-semibold mb-3">Faut-il une caution pour la location ?</h3>
+                <p class="text-gray-600">
+                    Non, nous ne demandons aucune caution. C'est l'un de nos avantages exclusifs pour rendre la location plus accessible.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-semibold mb-3">Proposez-vous la livraison à l'aéroport ?</h3>
+                <p class="text-gray-600">
+                    Oui, nous offrons la livraison gratuite à l'aéroport d'Essaouira. Informez-nous de votre heure d'arrivée lors de la réservation.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-semibold mb-3">Tous les véhicules sont-ils assurés ?</h3>
+                <p class="text-gray-600">
+                    Absolument ! Tous nos véhicules sont entièrement assurés et en excellent état. Votre sécurité est notre priorité.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-semibold mb-3">Puis-je modifier ou annuler ma réservation ?</h3>
+                <p class="text-gray-600">
+                    Oui, contactez-nous via WhatsApp pour toute modification ou annulation. Nous sommes flexibles et compréhensifs.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="bg-blue-600 text-white py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">
+            Prêt à Réserver ?
+        </h2>
+        <p class="text-xl mb-8">
+            Contactez-nous maintenant et obtenez votre véhicule rapidement
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://wa.me/212629473725" target="_blank" class="bg-green-500 hover:bg-green-600 px-8 py-3 rounded-lg font-semibold transition-colors">
+                <i class="fab fa-whatsapp mr-2"></i>
+                Contacter via WhatsApp
+            </a>
+            <a href="tel:+212629473725" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                <i class="fas fa-phone mr-2"></i>
+                Appeler Maintenant
+            </a>
+        </div>
+    </div>
+</section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Medridatours</h3>
+                    <p class="text-gray-300 mb-4">
+                        Votre partenaire de confiance pour la location de voitures à Essaouira, Maroc.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/212629473725" target="_blank" class="text-green-400 hover:text-green-300">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                        <a href="tel:+212629473725" class="text-blue-400 hover:text-blue-300">
+                            <i class="fas fa-phone text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-300 hover:text-white">Accueil</a></li>
+                        <li><a href="/fleet/" class="text-gray-300 hover:text-white">Notre Flotte</a></li>
+                        <li><a href="/about/" class="text-gray-300 hover:text-white">À Propos</a></li>
+                        <li><a href="/contact/" class="text-gray-300 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Nos Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Support 24/7</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Livraison gratuite à l'aéroport</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Aucune caution</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Assurance complète</li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Essaouira, Maroc
+                        </li>
+                        <li>
+                            <i class="fas fa-phone mr-2"></i>
+                            <a href="tel:+212629473725" class="hover:text-white">+212 629 473725</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            <a href="https://wa.me/212629473725" target="_blank" class="hover:text-white">WhatsApp</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 Medridatours. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/212629473725" target="_blank" class="whatsapp-float bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            console.log('Mobile menu button:', mobileMenuBtn);
+            console.log('Mobile menu:', mobileMenu);
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    console.log('Mobile menu button clicked');
+                    
+                    // Toggle display style directly
+                    if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                        mobileMenu.style.display = 'block';
+                        console.log('Menu opened');
+                    } else {
+                        mobileMenu.style.display = 'none';
+                        console.log('Menu closed');
+                    }
+                });
+            } else {
+                console.log('Mobile menu elements not found');
+            }
+        });
+    </script>
+    
+    
+</body>
+</html>
