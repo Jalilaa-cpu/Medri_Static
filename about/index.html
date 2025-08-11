@@ -19,8 +19,15 @@
     <meta property="og:image" content="/static/images/logo.jpg">
     
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%224%22 fill=%22%232563eb%22/><text x=%2216%22 y=%2223%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22system-ui, -apple-system, sans-serif%22 font-size=%2218%22 font-weight=%22bold%22>M</text></svg>">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%224%22 fill=%22%232563eb%22/><text x=%2216%22 y=%2223%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22system-ui, -apple-system, sans-serif%22 font-size=%2218%22 font-weight=%22bold%22>M</text></svg>">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="/static/images/LOGO%20NOIR%20.jpg" type="image/jpeg">
+    <link rel="icon" sizes="32x32" href="/static/images/LOGO%20NOIR%20.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="/static/images/LOGO%20NOIR%20.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/LOGO%20NOIR%20.jpg">
+    
+    <!-- Preload important images -->
+    <link rel="preload" href="/static/images/LOGO%20NOIR%20.jpg" as="image">
     
     <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,8 +50,8 @@
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="/" class="text-2xl font-bold text-blue-600">
-                        Medridatours
+                    <a href="/" class="flex items-center py-2">
+                        <img src="/static/images/LOGO%20NOIR%20.jpg" alt="Medridatours" class="h-12 w-auto max-w-none">
                     </a>
                 </div>
                 
@@ -236,7 +243,7 @@
                     <i class="fas fa-credit-card text-yellow-600"></i>
                 </div>
                 <div>
-                    <h3 class="text-xl font-semibold mb-2">Aucune Caution</h3>
+                    <h3 class="text-xl font-semibold mb-2">Avec Caution</h3>
                     <p class="text-gray-600">
                         Pas de caution à bloquer sur votre carte de crédit. Payez simplement le montant de la location.
                     </p>
@@ -389,7 +396,7 @@
                     <ul class="space-y-2 text-gray-300">
                         <li><i class="fas fa-check mr-2 text-green-400"></i>Support 24/7</li>
                         <li><i class="fas fa-check mr-2 text-green-400"></i>Livraison gratuite à l'aéroport</li>
-                        <li><i class="fas fa-check mr-2 text-green-400"></i>Aucune caution</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Avec caution</li>
                         <li><i class="fas fa-check mr-2 text-green-400"></i>Assurance complète</li>
                     </ul>
                 </div>
