@@ -13,9 +13,9 @@ class ReviewSystem {
         this.lastSubmissionKey = 'last_review_submission';
         
         // JSONBin.io - Free cross-device storage (properly configured)
-        this.apiUrl = 'https://api.jsonbin.io/v3/b/675a1e2ead19ca34f8cc3b8a';
+        this.apiUrl = 'https://api.jsonbin.io/v3/b/675a28e1e41b4d34e45c0c8a';
         this.apiKey = '$2a$10$vQr8nX2mY5kL9wJ4pR6tN.yH3sC8bW1qA7mK5fD9gE2xZ6vT4uP0s';
-        this.useCloudStorage = true; // Enable cloud storage for cross-device functionality
+        this.useCloudStorage = false; // Temporarily disable cloud storage for testing
         
         this.init();
     }
@@ -505,9 +505,15 @@ class ReviewSystem {
                     noReviewsMessage.classList.add('hidden');
                 }
                 
-                // Display reviews
-                const reviewsHTML = limitedReviews.map(review => this.createReviewHTML(review)).join('');
-                reviewsGrid.innerHTML = reviewsHTML;
+                // Display reviews with error handling
+                try {
+                    const reviewsHTML = limitedReviews.filter(review => review && typeof review === 'object').map(review => this.createReviewHTML(review)).join('');
+                    reviewsGrid.innerHTML = reviewsHTML;
+                    console.log('Successfully displayed reviews');
+                } catch (error) {
+                    console.error('Error creating review HTML:', error);
+                    reviewsGrid.innerHTML = '<p class="text-red-500">Erreur lors de l\'affichage des avis.</p>';
+                }
             }
         } catch (error) {
             console.error('Error displaying reviews:', error);
@@ -522,7 +528,7 @@ class ReviewSystem {
     createReviewHTML(review) {
         const stars = this.generateStarsHTML(review.rating);
         const timeAgo = this.formatTimeAgo(new Date(review.timestamp));
-        const truncatedContent = this.truncateText(review.content, 150);
+        const truncatedContent = this.truncateText(review.content || review.comment || '', 150);
 
         return `
             <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow review-card">
@@ -717,7 +723,8 @@ class ReviewSystem {
         return div.innerHTML;
     }
 
-    truncateText(text, maxLength) {
+    truncateText(text, maxLength = 150) {
+        if (!text || typeof text !== 'string') return '';
         if (text.length <= maxLength) return text;
         return text.substring(0, maxLength) + '...';
     }
