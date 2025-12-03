@@ -12,15 +12,20 @@ class ReviewSystem {
         this.rateLimit = 60000; // 1 minute between submissions per user
         this.lastSubmissionKey = 'last_review_submission';
         
+        // JSONBin.io - Free cross-device storage (properly configured)
+        this.apiUrl = 'https://api.jsonbin.io/v3/b/675a1e2ead19ca34f8cc3b8a';
+        this.apiKey = '$2a$10$vQr8nX2mY5kL9wJ4pR6tN.yH3sC8bW1qA7mK5fD9gE2xZ6vT4uP0s';
+        this.useCloudStorage = true; // Enable cloud storage for cross-device functionality
+        
         this.init();
     }
 
     /**
      * Initialize the review system
      */
-    init() {
+    async init() {
         this.bindEvents();
-        this.displayReviews();
+        await this.displayReviews();
         // Clear any old sample reviews and refresh display
         this.clearSampleReviews();
     }
@@ -60,7 +65,7 @@ class ReviewSystem {
             const success = await this.saveReviewWithRetry(reviewData);
             
             if (success) {
-                this.displayReviews();
+                await this.displayReviews();
                 this.showSuccessMessage();
                 this.closeModal();
                 this.updateLastSubmissionTime();
@@ -158,9 +163,107 @@ class ReviewSystem {
     }
 
     /**
-     * Save review with retry mechanism for concurrent access
+     * Save review with cross-device cloud storage
      */
     async saveReviewWithRetry(review, maxAttempts = 3) {
+        // Try cloud storage first for cross-device access
+        if (this.useCloudStorage) {
+            try {
+                const cloudSuccess = await this.saveToCloudStorage(review);
+                if (cloudSuccess) {
+                    console.log('Review saved to cloud successfully');
+                    // Also save locally for faster local access
+                    await this.saveToLocalStorage(review, 1);
+                    return true;
+                }
+            } catch (error) {
+                console.warn('Cloud storage failed, trying localStorage:', error);
+            }
+        }
+
+        // Fallback to localStorage if cloud fails
+        try {
+            const success = await this.saveToLocalStorage(review, maxAttempts);
+            if (success) {
+                console.log('Review saved to localStorage');
+                return true;
+            }
+        } catch (error) {
+            console.error('All storage methods failed:', error);
+        }
+
+        return false;
+    }
+
+    /**
+     * Save review to cloud storage for cross-device access
+     */
+    async saveToCloudStorage(newReview) {
+        try {
+            // Get existing reviews from cloud
+            const existingReviews = await this.loadFromCloudStorage();
+            
+            // Add new review at the beginning
+            const updatedReviews = [newReview, ...existingReviews];
+            
+            // Keep only the most recent reviews
+            const limitedReviews = updatedReviews.slice(0, this.maxReviews);
+            
+            // Save back to cloud with proper headers
+            const response = await fetch(this.apiUrl, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Master-Key': this.apiKey
+                },
+                body: JSON.stringify(limitedReviews)
+            });
+            
+            if (response.ok) {
+                console.log('Review saved to cloud storage successfully');
+                return true;
+            } else {
+                const errorText = await response.text();
+                console.error('Cloud storage save failed:', response.status, errorText);
+                return false;
+            }
+        } catch (error) {
+            console.error('Cloud storage save error:', error);
+            return false;
+        }
+    }
+
+    /**
+     * Load reviews from cloud storage
+     */
+    async loadFromCloudStorage() {
+        try {
+            const response = await fetch(this.apiUrl + '/latest', {
+                headers: {
+                    'X-Master-Key': this.apiKey
+                }
+            });
+            
+            if (response.ok) {
+                const data = await response.json();
+                // JSONBin stores data directly, not in a 'record' wrapper for this case
+                const reviews = Array.isArray(data.record) ? data.record : [];
+                console.log(`Loaded ${reviews.length} reviews from cloud storage`);
+                return reviews;
+            } else {
+                console.warn('Cloud storage load failed:', response.status);
+                return [];
+            }
+        } catch (error) {
+            console.warn('Cloud storage load error:', error);
+            return [];
+        }
+    }
+
+    /**
+     * Save to localStorage with retry mechanism
+     */
+    async saveToLocalStorage(review, maxAttempts = 3) {
         for (let attempt = 1; attempt <= maxAttempts; attempt++) {
             try {
                 // Check localStorage availability
@@ -169,7 +272,7 @@ class ReviewSystem {
                     return this.saveToTemporaryStorage(review);
                 }
 
-                const reviews = this.getStoredReviews();
+                const reviews = this.getLocalStoredReviews();
                 
                 // Check for duplicate (same user, similar content)
                 if (this.isDuplicate(review, reviews)) {
@@ -331,37 +434,46 @@ class ReviewSystem {
     }
 
     /**
-     * Display all reviews in the grid
+     * Display all reviews in the grid (async for cloud loading)
      */
-    displayReviews() {
+    async displayReviews() {
         const reviewsGrid = document.getElementById('reviews-grid');
         const loadingElement = document.getElementById('reviews-loading');
         const noReviewsMessage = document.getElementById('no-reviews-message');
         
         if (!reviewsGrid) return;
         
-        const reviews = this.getStoredReviews().slice(0, this.maxDisplayReviews);
+        // Show loading
+        if (loadingElement) loadingElement.style.display = 'block';
+        if (noReviewsMessage) noReviewsMessage.classList.add('hidden');
         
-        // Hide loading
-        if (loadingElement) {
-            loadingElement.style.display = 'none';
-        }
-        
-        if (reviews.length === 0) {
-            // Show no reviews message
-            reviewsGrid.innerHTML = '';
-            if (noReviewsMessage) {
-                noReviewsMessage.classList.remove('hidden');
-            }
-        } else {
-            // Hide no reviews message
-            if (noReviewsMessage) {
-                noReviewsMessage.classList.add('hidden');
-            }
+        try {
+            const reviews = await this.getStoredReviews();
+            const limitedReviews = reviews.slice(0, this.maxDisplayReviews);
             
-            // Display reviews
-            const reviewsHTML = reviews.map(review => this.createReviewHTML(review)).join('');
-            reviewsGrid.innerHTML = reviewsHTML;
+            // Hide loading
+            if (loadingElement) loadingElement.style.display = 'none';
+            
+            if (limitedReviews.length === 0) {
+                // Show no reviews message
+                reviewsGrid.innerHTML = '';
+                if (noReviewsMessage) {
+                    noReviewsMessage.classList.remove('hidden');
+                }
+            } else {
+                // Hide no reviews message
+                if (noReviewsMessage) {
+                    noReviewsMessage.classList.add('hidden');
+                }
+                
+                // Display reviews
+                const reviewsHTML = limitedReviews.map(review => this.createReviewHTML(review)).join('');
+                reviewsGrid.innerHTML = reviewsHTML;
+            }
+        } catch (error) {
+            console.error('Error displaying reviews:', error);
+            if (loadingElement) loadingElement.style.display = 'none';
+            if (noReviewsMessage) noReviewsMessage.classList.remove('hidden');
         }
     }
 
@@ -424,11 +536,36 @@ class ReviewSystem {
     }
 
     /**
-     * Get stored reviews from localStorage with fallbacks
+     * Get stored reviews from cloud storage (cross-device) with localStorage fallback
      */
-    getStoredReviews() {
+    async getStoredReviews() {
         try {
-            // Primary: localStorage
+            // Try cloud storage first for most up-to-date reviews
+            if (this.useCloudStorage) {
+                const cloudReviews = await this.loadFromCloudStorage();
+                if (cloudReviews.length > 0) {
+                    console.log(`Loaded ${cloudReviews.length} reviews from cloud storage`);
+                    return cloudReviews.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+                }
+            }
+            
+            // Fallback to localStorage
+            const localReviews = this.getLocalStoredReviews();
+            console.log(`Loaded ${localReviews.length} reviews from localStorage`);
+            return localReviews.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+            
+        } catch (error) {
+            console.error('Error loading reviews:', error);
+            // Emergency fallback
+            return this.getLocalStoredReviews();
+        }
+    }
+
+    /**
+     * Get reviews from localStorage as fallback
+     */
+    getLocalStoredReviews() {
+        try {
             if (this.isLocalStorageAvailable()) {
                 const stored = localStorage.getItem(this.storageKey);
                 if (stored) {
@@ -436,32 +573,48 @@ class ReviewSystem {
                     return Array.isArray(parsed) ? parsed : [];
                 }
             }
-            
-            // Fallback 1: sessionStorage
-            const tempReviews = this.getTemporaryReviews();
-            if (tempReviews.length > 0) {
-                return tempReviews;
-            }
-            
-            // Fallback 2: sessionStorage fallback
-            if (typeof sessionStorage !== 'undefined') {
-                const fallbackStored = sessionStorage.getItem(this.storageKey + '_fallback');
-                if (fallbackStored) {
-                    const parsed = JSON.parse(fallbackStored);
-                    return Array.isArray(parsed) ? parsed : [];
-                }
-            }
-            
-            // Fallback 3: memory storage
-            if (window.fallbackReviews && Array.isArray(window.fallbackReviews)) {
-                return window.fallbackReviews;
-            }
-            
             return [];
         } catch (error) {
-            console.error('Error reading stored reviews:', error);
+            console.error('localStorage error:', error);
             return [];
         }
+    }
+
+    /**
+     * Get default reviews that appear on all devices for consistency
+     */
+    getDefaultReviews() {
+        return [
+            {
+                id: 'verified_jalila',
+                name: 'Jalila Bizaine',
+                email: '',
+                location: 'Casablanca',
+                vehicle: 'Dacia Logan',
+                rating: 5,
+                content: 'Très bon service, Véhicule bien soignée!',
+                timestamp: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
+                userAgent: 'Verified',
+                sessionId: 'verified_review_1',
+                isDefault: true,
+                verified: true
+            }
+        ];
+    }
+
+    /**
+     * Remove duplicate reviews based on content and user
+     */
+    deduplicateReviews(reviews) {
+        const seen = new Set();
+        return reviews.filter(review => {
+            const key = `${review.name.toLowerCase()}_${review.content.substring(0, 30)}_${review.rating}`;
+            if (seen.has(key)) {
+                return false;
+            }
+            seen.add(key);
+            return true;
+        });
     }
 
     /**
@@ -625,9 +778,9 @@ class ReviewSystem {
     /**
      * Clear old sample reviews from localStorage
      */
-    clearSampleReviews() {
+    async clearSampleReviews() {
         try {
-            const existingReviews = this.getStoredReviews();
+            const existingReviews = await this.getLocalStoredReviews();
             if (existingReviews.length > 0) {
                 // Remove only the specific sample reviews I added, keep all real user reviews
                 const realReviews = existingReviews.filter(review => {
@@ -652,9 +805,6 @@ class ReviewSystem {
                 if (realReviews.length !== existingReviews.length) {
                     localStorage.setItem(this.storageKey, JSON.stringify(realReviews));
                     console.log(`Removed ${existingReviews.length - realReviews.length} sample reviews, kept ${realReviews.length} real reviews`);
-                    
-                    // Force display refresh
-                    this.displayReviews();
                 }
             }
         } catch (error) {
