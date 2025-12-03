@@ -98,11 +98,11 @@ class ReviewSystem {
     extractFormData(formData) {
         return {
             id: this.generateUniqueId(),
-            name: this.sanitize(formData.get('name')) || 'Client anonyme',
+            name: this.sanitize(formData.get('name')) || '',
             email: this.sanitize(formData.get('email')) || '',
             location: this.sanitize(formData.get('location')) || '',
             vehicle: this.sanitize(formData.get('vehicle_rented')) || '',
-            rating: parseInt(formData.get('rating')) || 5,
+            rating: parseInt(formData.get('rating')) || 0,
             content: this.sanitize(formData.get('content')) || '',
             timestamp: new Date().toISOString(),
             userAgent: navigator.userAgent.substring(0, 100), // Limited for privacy
@@ -114,18 +114,43 @@ class ReviewSystem {
      * Validate review data
      */
     validateReview(review) {
-        if (!review.name.trim()) {
-            this.showMessage('Le nom est obligatoire.', 'error');
+        // Check required fields one by one with specific error messages
+        if (!review.name || !review.name.trim()) {
+            this.showMessage('Veuillez entrer votre nom.', 'error');
+            // Focus on the name field
+            const nameField = document.getElementById('review-name');
+            if (nameField) {
+                nameField.focus();
+                nameField.classList.add('border-red-500');
+                setTimeout(() => nameField.classList.remove('border-red-500'), 3000);
+            }
             return false;
         }
         
-        if (!review.content.trim() || review.content.length < 10) {
-            this.showMessage('Veuillez écrire un commentaire d\'au moins 10 caractères.', 'error');
+        if (!review.content || !review.content.trim()) {
+            this.showMessage('Veuillez écrire un commentaire.', 'error');
+            const contentField = document.getElementById('review-content');
+            if (contentField) {
+                contentField.focus();
+                contentField.classList.add('border-red-500');
+                setTimeout(() => contentField.classList.remove('border-red-500'), 3000);
+            }
+            return false;
+        }
+        
+        if (review.content.trim().length < 10) {
+            this.showMessage('Votre commentaire doit contenir au moins 10 caractères.', 'error');
+            const contentField = document.getElementById('review-content');
+            if (contentField) {
+                contentField.focus();
+                contentField.classList.add('border-red-500');
+                setTimeout(() => contentField.classList.remove('border-red-500'), 3000);
+            }
             return false;
         }
         
         if (!review.rating || review.rating < 1 || review.rating > 5) {
-            this.showMessage('Veuillez sélectionner une note.', 'error');
+            this.showMessage('Veuillez sélectionner une note en cliquant sur les étoiles.', 'error');
             return false;
         }
         
