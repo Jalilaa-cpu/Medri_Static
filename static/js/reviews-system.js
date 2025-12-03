@@ -246,8 +246,19 @@ class ReviewSystem {
             
             if (response.ok) {
                 const data = await response.json();
-                // JSONBin stores data directly, not in a 'record' wrapper for this case
-                const reviews = Array.isArray(data.record) ? data.record : [];
+                console.log('Raw cloud data:', data);
+                
+                // JSONBin response format: { record: [array_of_reviews], metadata: {...} }
+                let reviews = [];
+                
+                if (data.record) {
+                    if (Array.isArray(data.record)) {
+                        reviews = data.record;
+                    } else if (data.record.reviews && Array.isArray(data.record.reviews)) {
+                        reviews = data.record.reviews;
+                    }
+                }
+                
                 console.log(`Loaded ${reviews.length} reviews from cloud storage`);
                 return reviews;
             } else {
@@ -441,7 +452,12 @@ class ReviewSystem {
         const loadingElement = document.getElementById('reviews-loading');
         const noReviewsMessage = document.getElementById('no-reviews-message');
         
-        if (!reviewsGrid) return;
+        console.log('Starting displayReviews...');
+        
+        if (!reviewsGrid) {
+            console.error('reviews-grid element not found');
+            return;
+        }
         
         // Show loading
         if (loadingElement) loadingElement.style.display = 'block';
@@ -449,18 +465,22 @@ class ReviewSystem {
         
         try {
             const reviews = await this.getStoredReviews();
+            console.log(`Got ${reviews.length} reviews to display:`, reviews);
+            
             const limitedReviews = reviews.slice(0, this.maxDisplayReviews);
             
             // Hide loading
             if (loadingElement) loadingElement.style.display = 'none';
             
             if (limitedReviews.length === 0) {
+                console.log('No reviews to display, showing no-reviews message');
                 // Show no reviews message
                 reviewsGrid.innerHTML = '';
                 if (noReviewsMessage) {
                     noReviewsMessage.classList.remove('hidden');
                 }
             } else {
+                console.log(`Displaying ${limitedReviews.length} reviews`);
                 // Hide no reviews message
                 if (noReviewsMessage) {
                     noReviewsMessage.classList.add('hidden');
