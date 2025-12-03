@@ -44,40 +44,56 @@ class ReviewSystem {
      * Handle form submission with validation and rate limiting
      */
     async handleSubmission(event) {
+        console.log('=== REVIEW SUBMISSION STARTED ===');
         event.preventDefault();
         
         // Rate limiting check
         if (!this.checkRateLimit()) {
+            console.log('Rate limit exceeded');
             this.showMessage('Veuillez attendre avant de soumettre un autre avis.', 'warning');
             return;
         }
 
         const formData = new FormData(event.target);
         const reviewData = this.extractFormData(formData);
+        
+        console.log('Extracted review data:', reviewData);
 
         // Validate data
         if (!this.validateReview(reviewData)) {
+            console.log('Review validation failed');
             return;
         }
 
+        console.log('Review validation passed');
+
         try {
+            console.log('Attempting to save review...');
             // Save review with retry mechanism
             const success = await this.saveReviewWithRetry(reviewData);
             
+            console.log('Save result:', success);
+            
             if (success) {
+                console.log('Review saved successfully, now displaying reviews...');
                 await this.displayReviews();
+                console.log('Reviews display completed');
                 this.showSuccessMessage();
                 this.closeModal();
                 this.updateLastSubmissionTime();
                 
                 // Scroll to reviews section
                 setTimeout(() => {
-                    document.getElementById('reviews-section').scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    const reviewsSection = document.getElementById('reviews-section');
+                    if (reviewsSection) {
+                        reviewsSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }, 500);
             } else {
+                console.log('Review save failed');
                 this.showMessage('Impossible de sauvegarder l\'avis. Veuillez vérifier votre navigateur ou réessayer.', 'error');
             }
         } catch (error) {
@@ -95,6 +111,8 @@ class ReviewSystem {
             
             this.showMessage(errorMessage, 'error');
         }
+        
+        console.log('=== REVIEW SUBMISSION COMPLETED ===');
     }
 
     /**
@@ -238,6 +256,7 @@ class ReviewSystem {
      */
     async loadFromCloudStorage() {
         try {
+            console.log('Loading from cloud storage...');
             const response = await fetch(this.apiUrl + '/latest', {
                 headers: {
                     'X-Master-Key': this.apiKey
