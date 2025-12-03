@@ -468,6 +468,18 @@
     </div>
 </section>
 
+<!-- Hidden Netlify Form for cross-device review storage -->
+<form name="reviews" netlify hidden>
+    <input type="text" name="name">
+    <input type="email" name="email">
+    <input type="text" name="location">
+    <input type="text" name="vehicle">
+    <input type="number" name="rating">
+    <textarea name="content"></textarea>
+    <input type="text" name="timestamp">
+    <textarea name="review-data"></textarea>
+</form>
+
 <!-- Review Modal -->
 <div id="review-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
