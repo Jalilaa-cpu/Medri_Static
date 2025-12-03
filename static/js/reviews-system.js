@@ -12,10 +12,9 @@ class ReviewSystem {
         this.rateLimit = 60000; // 1 minute between submissions per user
         this.lastSubmissionKey = 'last_review_submission';
         
-        // GitHub Gist - Reliable cross-device storage
-        this.gistId = '675a2d1e2f8b9c3d4e5f6789';
-        this.gistToken = null; // Public gist, no token needed for reading
-        this.useCloudStorage = true; // Enable cloud storage
+        // Simple cross-device storage using a free service
+        this.firebaseUrl = 'https://medridatours-reviews-default-rtdb.firebaseio.com/reviews.json';
+        this.useCloudStorage = true;
         
         this.init();
     }
@@ -259,30 +258,111 @@ class ReviewSystem {
     }
 
     /**
-     * Save review to cloud storage for cross-device access
+     * Save review to Firebase for true cross-device access
      */
     async saveToCloudStorage(newReview) {
         try {
-            console.log('Saving to cross-device storage...');
-            // Get existing reviews from cloud
+            console.log('Saving to Firebase cross-device storage...');
+            
+            // Get existing reviews
             const existingReviews = await this.loadFromCloudStorage();
             
-            // Add new review at the beginning
+            // Add new review
             const updatedReviews = [newReview, ...existingReviews];
-            
-            // Keep only the most recent reviews
             const limitedReviews = updatedReviews.slice(0, this.maxReviews);
             
-            // For cross-device storage, we'll use a combination of localStorage and sessionStorage
-            // This provides better reliability than external APIs
-            this.saveToMultipleStorages(limitedReviews);
+            // Save to Firebase
+            const response = await fetch(this.firebaseUrl, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(limitedReviews)
+            });
             
-            console.log('Review saved to cross-device storage successfully');
-            return true;
+            if (response.ok) {
+                console.log('Review saved to Firebase successfully');
+                // Also save locally as backup
+                this.saveToMultipleStorages(limitedReviews);
+                return true;
+            } else {
+                console.error('Firebase save failed:', response.status);
+                // Fallback to local storage
+                this.saveToMultipleStorages(limitedReviews);
+                return true;
+            }
         } catch (error) {
-            console.error('Cloud storage save error:', error);
-            return false;
+            console.error('Firebase save error:', error);
+            // Fallback to local storage
+            const existingLocal = await this.getLocalStoredReviews();
+            this.saveToMultipleStorages([newReview, ...existingLocal]);
+            return true;
         }
+    }
+
+    /**
+     * Load reviews from Firebase cross-device storage
+     */
+    async loadFromCloudStorage() {
+        try {
+            console.log('Loading from Firebase cross-device storage...');
+            
+            const response = await fetch(this.firebaseUrl);
+            
+            if (response.ok) {
+                const data = await response.json();
+                
+                if (Array.isArray(data) && data.length > 0) {
+                    console.log(`Loaded ${data.length} reviews from Firebase`);
+                    // Also save locally as backup
+                    this.saveToMultipleStorages(data);
+                    return data;
+                } else {
+                    console.log('No reviews found in Firebase');
+                }
+            } else {
+                console.warn('Firebase load failed:', response.status);
+            }
+        } catch (error) {
+            console.warn('Firebase load error:', error);
+        }
+        
+        // Fallback to local storage
+        return await this.loadFromLocalSources();
+    }
+
+    /**
+     * Load from local sources with fallback chain
+     */
+    async loadFromLocalSources() {
+        // Try multiple storage sources in order of preference
+        let reviews = [];
+        
+        // 1. Try global variable (most recent)
+        if (window.medridatoursReviews && Array.isArray(window.medridatoursReviews)) {
+            reviews = window.medridatoursReviews;
+            console.log(`Loaded ${reviews.length} reviews from global storage`);
+            return reviews;
+        }
+        
+        // 2. Try localStorage
+        if (this.isLocalStorageAvailable()) {
+            const stored = localStorage.getItem(this.storageKey);
+            if (stored) {
+                try {
+                    reviews = JSON.parse(stored);
+                    if (Array.isArray(reviews)) {
+                        console.log(`Loaded ${reviews.length} reviews from localStorage`);
+                        return reviews;
+                    }
+                } catch (e) {
+                    console.warn('Failed to parse localStorage data');
+                }
+            }
+        }
+        
+        console.log('No reviews found in any storage');
+        return [];
     }
 
     /**
