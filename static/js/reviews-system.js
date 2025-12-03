@@ -25,6 +25,15 @@ class ReviewSystem {
     async init() {
         this.bindEvents();
         
+        // ONE-TIME ONLY: Clear all existing reviews to start fresh with Firebase
+        // This will only run once, then disable itself
+        const hasRunClear = localStorage.getItem('firebase_migration_complete');
+        if (!hasRunClear) {
+            await this.clearAllReviews();
+            localStorage.setItem('firebase_migration_complete', 'true');
+            console.log('One-time migration to Firebase completed');
+        }
+        
         // Load and display reviews
         await this.displayReviews();
         
@@ -35,6 +44,49 @@ class ReviewSystem {
         this.clearSampleReviews();
         
         console.log('Review system initialized');
+    }
+
+    /**
+     * Clear all reviews from all storage locations
+     */
+    async clearAllReviews() {
+        console.log('Clearing all existing reviews...');
+        
+        try {
+            // Clear Firebase
+            const response = await fetch(this.firebaseUrl, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify([])
+            });
+            
+            if (response.ok) {
+                console.log('Firebase cleared successfully');
+            } else {
+                console.warn('Firebase clear failed:', response.status);
+            }
+        } catch (error) {
+            console.warn('Firebase clear error:', error);
+        }
+        
+        // Clear all local storage
+        try {
+            if (this.isLocalStorageAvailable()) {
+                localStorage.removeItem(this.storageKey);
+                localStorage.removeItem(this.storageKey + '_backup');
+                localStorage.removeItem('medridatours_shared_reviews_v1');
+                console.log('Local storage cleared');
+            }
+            
+            sessionStorage.removeItem(this.storageKey);
+            window.medridatoursReviews = [];
+            
+            console.log('All storage cleared successfully');
+        } catch (error) {
+            console.warn('Local storage clear error:', error);
+        }
     }
 
     /**
