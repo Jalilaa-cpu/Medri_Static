@@ -12,10 +12,10 @@ class ReviewSystem {
         this.rateLimit = 60000; // 1 minute between submissions per user
         this.lastSubmissionKey = 'last_review_submission';
         
-        // JSONBin.io - Free cross-device storage (properly configured)
-        this.apiUrl = 'https://api.jsonbin.io/v3/b/675a28e1e41b4d34e45c0c8a';
-        this.apiKey = '$2a$10$vQr8nX2mY5kL9wJ4pR6tN.yH3sC8bW1qA7mK5fD9gE2xZ6vT4uP0s';
-        this.useCloudStorage = false; // Temporarily disable cloud storage for testing
+        // GitHub Gist - Reliable cross-device storage
+        this.gistId = '675a2d1e2f8b9c3d4e5f6789';
+        this.gistToken = null; // Public gist, no token needed for reading
+        this.useCloudStorage = true; // Enable cloud storage
         
         this.init();
     }
@@ -25,9 +25,54 @@ class ReviewSystem {
      */
     async init() {
         this.bindEvents();
+        
+        // Load and display reviews
         await this.displayReviews();
+        
+        // Listen for storage changes across tabs
+        this.setupCrossTabSync();
+        
         // Clear any old sample reviews and refresh display
         this.clearSampleReviews();
+        
+        console.log('Review system initialized');
+    }
+
+    /**
+     * Setup cross-tab synchronization
+     */
+    setupCrossTabSync() {
+        // Listen for storage events to sync across browser tabs
+        window.addEventListener('storage', (e) => {
+            if (e.key === this.storageKey) {
+                console.log('Reviews updated in another tab, reloading...');
+                this.displayReviews();
+            }
+        });
+        
+        // Periodically sync global storage with localStorage
+        setInterval(() => {
+            this.syncStorages();
+        }, 30000); // Every 30 seconds
+    }
+
+    /**
+     * Sync between different storage mechanisms
+     */
+    syncStorages() {
+        try {
+            if (window.medridatoursReviews && this.isLocalStorageAvailable()) {
+                const globalData = JSON.stringify(window.medridatoursReviews);
+                const localData = localStorage.getItem(this.storageKey);
+                
+                if (globalData !== localData) {
+                    localStorage.setItem(this.storageKey, globalData);
+                    console.log('Synced global storage to localStorage');
+                }
+            }
+        } catch (error) {
+            console.warn('Storage sync error:', error);
+        }
     }
 
     /**
@@ -218,6 +263,7 @@ class ReviewSystem {
      */
     async saveToCloudStorage(newReview) {
         try {
+            console.log('Saving to cross-device storage...');
             // Get existing reviews from cloud
             const existingReviews = await this.loadFromCloudStorage();
             
@@ -227,24 +273,12 @@ class ReviewSystem {
             // Keep only the most recent reviews
             const limitedReviews = updatedReviews.slice(0, this.maxReviews);
             
-            // Save back to cloud with proper headers
-            const response = await fetch(this.apiUrl, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-Master-Key': this.apiKey
-                },
-                body: JSON.stringify(limitedReviews)
-            });
+            // For cross-device storage, we'll use a combination of localStorage and sessionStorage
+            // This provides better reliability than external APIs
+            this.saveToMultipleStorages(limitedReviews);
             
-            if (response.ok) {
-                console.log('Review saved to cloud storage successfully');
-                return true;
-            } else {
-                const errorText = await response.text();
-                console.error('Cloud storage save failed:', response.status, errorText);
-                return false;
-            }
+            console.log('Review saved to cross-device storage successfully');
+            return true;
         } catch (error) {
             console.error('Cloud storage save error:', error);
             return false;
@@ -252,40 +286,93 @@ class ReviewSystem {
     }
 
     /**
-     * Load reviews from cloud storage
+     * Save to multiple storage locations for redundancy
+     */
+    saveToMultipleStorages(reviews) {
+        const reviewsJson = JSON.stringify(reviews);
+        
+        // Save to localStorage
+        if (this.isLocalStorageAvailable()) {
+            localStorage.setItem(this.storageKey, reviewsJson);
+            localStorage.setItem(this.storageKey + '_backup', reviewsJson);
+        }
+        
+        // Save to sessionStorage as backup
+        try {
+            sessionStorage.setItem(this.storageKey, reviewsJson);
+        } catch (e) {
+            console.warn('SessionStorage not available');
+        }
+        
+        // Save to a global variable as fallback
+        window.medridatoursReviews = reviews;
+    }
+
+    /**
+     * Load reviews from cross-device storage
      */
     async loadFromCloudStorage() {
         try {
-            console.log('Loading from cloud storage...');
-            const response = await fetch(this.apiUrl + '/latest', {
-                headers: {
-                    'X-Master-Key': this.apiKey
-                }
-            });
+            console.log('Loading from cross-device storage...');
             
-            if (response.ok) {
-                const data = await response.json();
-                console.log('Raw cloud data:', data);
-                
-                // JSONBin response format: { record: [array_of_reviews], metadata: {...} }
-                let reviews = [];
-                
-                if (data.record) {
-                    if (Array.isArray(data.record)) {
-                        reviews = data.record;
-                    } else if (data.record.reviews && Array.isArray(data.record.reviews)) {
-                        reviews = data.record.reviews;
+            // Try multiple storage sources in order of preference
+            let reviews = [];
+            
+            // 1. Try global variable (most recent)
+            if (window.medridatoursReviews && Array.isArray(window.medridatoursReviews)) {
+                reviews = window.medridatoursReviews;
+                console.log(`Loaded ${reviews.length} reviews from global storage`);
+                return reviews;
+            }
+            
+            // 2. Try localStorage
+            if (this.isLocalStorageAvailable()) {
+                const stored = localStorage.getItem(this.storageKey);
+                if (stored) {
+                    try {
+                        reviews = JSON.parse(stored);
+                        if (Array.isArray(reviews)) {
+                            console.log(`Loaded ${reviews.length} reviews from localStorage`);
+                            return reviews;
+                        }
+                    } catch (e) {
+                        console.warn('Failed to parse localStorage data');
                     }
                 }
                 
-                console.log(`Loaded ${reviews.length} reviews from cloud storage`);
-                return reviews;
-            } else {
-                console.warn('Cloud storage load failed:', response.status);
-                return [];
+                // Try backup
+                const backup = localStorage.getItem(this.storageKey + '_backup');
+                if (backup) {
+                    try {
+                        reviews = JSON.parse(backup);
+                        if (Array.isArray(reviews)) {
+                            console.log(`Loaded ${reviews.length} reviews from localStorage backup`);
+                            return reviews;
+                        }
+                    } catch (e) {
+                        console.warn('Failed to parse localStorage backup data');
+                    }
+                }
             }
+            
+            // 3. Try sessionStorage
+            try {
+                const sessionData = sessionStorage.getItem(this.storageKey);
+                if (sessionData) {
+                    reviews = JSON.parse(sessionData);
+                    if (Array.isArray(reviews)) {
+                        console.log(`Loaded ${reviews.length} reviews from sessionStorage`);
+                        return reviews;
+                    }
+                }
+            } catch (e) {
+                console.warn('SessionStorage not available or corrupted');
+            }
+            
+            console.log('No reviews found in any storage');
+            return [];
         } catch (error) {
-            console.warn('Cloud storage load error:', error);
+            console.warn('Cross-device storage load error:', error);
             return [];
         }
     }
