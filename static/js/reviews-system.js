@@ -21,7 +21,8 @@ class ReviewSystem {
     init() {
         this.bindEvents();
         this.displayReviews();
-        this.addSampleReviews();
+        // Clear any old sample reviews and refresh display
+        this.clearSampleReviews();
     }
 
     /**
@@ -594,6 +595,46 @@ class ReviewSystem {
     addSampleReviews() {
         // Sample reviews disabled - only show real user reviews
         return;
+    }
+
+    /**
+     * Clear old sample reviews from localStorage
+     */
+    clearSampleReviews() {
+        try {
+            const existingReviews = this.getStoredReviews();
+            if (existingReviews.length > 0) {
+                // Remove only the specific sample reviews I added, keep all real user reviews
+                const realReviews = existingReviews.filter(review => {
+                    // Remove reviews with sample IDs
+                    if (review.id?.includes('sample_')) return false;
+                    
+                    // Remove reviews marked with Sample userAgent
+                    if (review.userAgent === 'Sample') return false;
+                    
+                    // Remove the specific sample reviews by name
+                    const sampleNames = ['Fatima Zahra', 'Ahmed Bennani', 'Sarah Martin'];
+                    if (sampleNames.includes(review.name) && 
+                        (review.userAgent === 'Sample' || !review.userAgent)) {
+                        return false;
+                    }
+                    
+                    // Keep all other reviews (real user reviews)
+                    return true;
+                });
+                
+                // Only update if we actually removed something
+                if (realReviews.length !== existingReviews.length) {
+                    localStorage.setItem(this.storageKey, JSON.stringify(realReviews));
+                    console.log(`Removed ${existingReviews.length - realReviews.length} sample reviews, kept ${realReviews.length} real reviews`);
+                    
+                    // Force display refresh
+                    this.displayReviews();
+                }
+            }
+        } catch (error) {
+            console.error('Error clearing sample reviews:', error);
+        }
     }
 
     /**
