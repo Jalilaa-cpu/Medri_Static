@@ -1,0 +1,783 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location de Voiture Essaouira - Flotte Medridatours | Véhicules Climatisés</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Découvrez notre flotte de location de voiture à Essaouira ✓ 11 véhicules climatisés ✓ Dacia, Hyundai, Kia, Fiat ✓ De 30€ à 90€/jour ✓ Réservation WhatsApp immédiate">
+    <meta name="keywords" content="location voiture essaouira, location de voiture essaouira maroc, car rental essaouira, agence location voiture essaouira, medridatours, rent car essaouira morocco, location auto essaouira, location véhicule essaouira">
+    <meta name="author" content="Medridatours">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="MA-ESI">
+    <meta name="geo.placename" content="Essaouira, Morocco">
+    <meta name="geo.position" content="31.5125;-9.7709">
+    <meta name="ICBM" content="31.5125, -9.7709">
+    <meta name="google-site-verification" content="">
+    <meta name="theme-color" content="#3B82F6">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Location de Voiture Essaouira - Medridatours Maroc">
+    <meta property="og:description" content="Agence location voiture Essaouira ✓ Véhicules neufs avec climatisation ✓ Livraison aéroport gratuite ✓ Service avec caution ✓ Réservation WhatsApp">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://testserver/fleet/">
+    <meta property="og:image" content="/static/images/LOGO%20NOIR%20.jpg">
+    <meta property="og:site_name" content="Medridatours">
+    <meta property="og:locale" content="fr_MA">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CarRental",
+        "name": "Medridatours",
+        "description": "Agence de location de voitures à Essaouira, Maroc. Véhicules modernes avec climatisation, service avec caution.",
+        "url": "https://medridatours.com",
+        "logo": "/static/images/LOGO%20NOIR%20.jpg",
+        "image": "/static/images/LOGO%20NOIR%20.jpg",
+        "telephone": "+212629473725",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Essaouira",
+            "addressRegion": "Marrakech-Safi",
+            "addressCountry": "MA"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 31.5125,
+            "longitude": -9.7709
+        },
+        "openingHours": "Mo-Su 00:00-23:59",
+        "priceRange": "30€-90€",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Location de Voitures",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Car",
+                        "name": "Dacia Logan",
+                        "brand": "Dacia"
+                    },
+                    "price": "30",
+                    "priceCurrency": "EUR"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Car",
+                        "name": "Hyundai Tucson",
+                        "brand": "Hyundai"
+                    },
+                    "price": "82",
+                    "priceCurrency": "EUR"
+                }
+            ]
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+212629473725",
+            "contactType": "customer service",
+            "availableLanguage": ["French", "Arabic", "English"]
+        }
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="/static/images/LOGO%20NOIR%20.jpg" type="image/jpeg">
+    <link rel="icon" sizes="32x32" href="/static/images/LOGO%20NOIR%20.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="/static/images/LOGO%20NOIR%20.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/LOGO%20NOIR%20.jpg">
+    
+    <!-- Preload important images -->
+    <link rel="preload" href="/static/images/LOGO%20NOIR%20.jpg" as="image">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <!-- Custom JavaScript -->
+    <script src="/static/js/main.js" defer></script>
+    
+    
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center py-2">
+                        <img src="/static/images/LOGO%20NOIR%20.jpg" alt="Medridatours" class="h-12 w-auto max-w-none">
+                    </a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Accueil
+                        </a>
+                        <a href="/fleet/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Notre Flotte
+                        </a>
+                        <a href="/transport-touristique/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Transport Touristique
+                        </a>
+                        <a href="/about/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            À Propos
+                        </a>
+                        <a href="/contact/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-blue-600 focus:outline-none p-2 border border-gray-300 rounded">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+                
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/212629473725" target="_blank" class="hidden sm:inline-flex bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white border-t shadow-lg z-40" style="display: none;">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Accueil
+                </a>
+                <a href="/fleet/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Notre Flotte
+                </a>
+                <a href="/transport-touristique/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Transport Touristique
+                </a>
+                <a href="/about/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    À Propos
+                </a>
+                <a href="/contact/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Contact
+                </a>
+                <a href="https://wa.me/212629473725" target="_blank" class="text-green-600 hover:text-green-700 block px-3 py-2 text-base font-medium">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="pt-16">
+        
+<!-- Header -->
+<section class="bg-blue-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                Location de Voiture Essaouira - Notre Flotte
+            </h1>
+            <p class="text-xl">
+                11 véhicules climatisés disponibles pour location à Essaouira. Agence Medridatours - Service avec caution, tarifs transparents.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- SEO Content Section -->
+<section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                Pourquoi Choisir la Location de Voiture Medridatours à Essaouira ?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left max-w-4xl mx-auto">
+                <div>
+                    <h3 class="text-lg font-semibold mb-2 text-blue-600">Véhicules Récents</h3>
+                    <p class="text-gray-600">Toute notre flotte est composée de véhicules récents avec climatisation automatique.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2 text-green-600">Service Local</h3>
+                    <p class="text-gray-600">Agence locale basée à Essaouira, connaissance parfaite de la région.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2 text-purple-600">Réservation Simple</h3>
+                    <p class="text-gray-600">Réservation WhatsApp en 2 minutes. Livraison aéroport gratuite.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vehicle Grid (Static Images) -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+            Nos Véhicules de Location à Essaouira
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/dacia_logan.png" alt="Location Dacia Logan Essaouira - Medridatours 30 € / Jour/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Dacia Logan</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-cog text-blue-500"></i>
+                                <span class="font-semibold">Transmission:</span>
+                                <span>Automatique</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-car-side text-purple-500"></i>
+                                <span class="font-semibold">Type:</span>
+                                <span>Sedan – Coffre 528 L</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-gas-pump text-green-500"></i>
+                                <span class="font-semibold">Carburant:</span>
+                                <span>Essence / Diesel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">30 € / Jour</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20Dacia%20Logan" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors">
+                                <i class="fab fa-whatsapp mr-1"></i>
+                                Réserver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/dacia-duster.png" alt="Location Dacia Duster Essaouira - Medridatours 40 € / Jour/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Dacia Duster</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-cog text-blue-500"></i>
+                                <span class="font-semibold">Transmission:</span>
+                                <span>Manuelle</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-car-side text-purple-500"></i>
+                                <span class="font-semibold">Type:</span>
+                                <span>SUV Compact – Coffre 445 L</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-gas-pump text-green-500"></i>
+                                <span class="font-semibold">Carburant:</span>
+                                <span>Diesel / Essence</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">40 € / Jour</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20Dacia%20Duster" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors">
+                                <i class="fab fa-whatsapp mr-1"></i>
+                                Réserver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/hyundai_tukson.png" alt="Location Hyundai Tucson Essaouira - Medridatours 82 € / Jour/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Hyundai Tucson</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-cog text-blue-500"></i>
+                                <span class="font-semibold">Transmission:</span>
+                                <span>Automatique</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-car-side text-purple-500"></i>
+                                <span class="font-semibold">Type:</span>
+                                <span>SUV Familial – Coffre 620 L</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-gas-pump text-green-500"></i>
+                                <span class="font-semibold">Carburant:</span>
+                                <span>Hybride / Essence</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">82 € / Jour</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20Hyundai%20Tucson" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors">
+                                <i class="fab fa-whatsapp mr-1"></i>
+                                Réserver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/dacia_lodgy.png" alt="Location Dacia Lodgy Essaouira - Medridatours 45 € / Jour/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Dacia Lodgy</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-cog text-blue-500"></i>
+                                <span class="font-semibold">Transmission:</span>
+                                <span>Automatique</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-car-side text-purple-500"></i>
+                                <span class="font-semibold">Type:</span>
+                                <span>7 Places – Coffre modulable</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-gas-pump text-green-500"></i>
+                                <span class="font-semibold">Carburant:</span>
+                                <span>Diesel / Essence</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">45 € / Jour</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20Dacia%20Lodgy" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors">
+                                <i class="fab fa-whatsapp mr-1"></i>
+                                Réserver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/Fiat 500.png" alt="Location FIAT 500 Essaouira - Medridatours 30 € / Jour/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">FIAT 500</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-cog text-blue-500"></i>
+                                <span class="font-semibold">Transmission:</span>
+                                <span>Automatique</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-car-side text-purple-500"></i>
+                                <span class="font-semibold">Type:</span>
+                                <span>Citadine compacte</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-gas-pump text-green-500"></i>
+                                <span class="font-semibold">Carburant:</span>
+                                <span>Essence / Hybride</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">30 € / Jour</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20FIAT%20500" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors">
+                                <i class="fab fa-whatsapp mr-1"></i>
+                                Réserver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/renault_clio 5.jpg" alt="Location Renault Clio 5 Essaouira - Medridatours 30 € / Jour/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Renault Clio 5</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-cog text-blue-500"></i>
+                                <span class="font-semibold">Transmission:</span>
+                                <span>Manuelle</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-car-side text-purple-500"></i>
+                                <span class="font-semibold">Type:</span>
+                                <span>Polyvalente – Coffre 391 L</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-gas-pump text-green-500"></i>
+                                <span class="font-semibold">Carburant:</span>
+                                <span>Diesel / Essence</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">30 € / Jour</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20Renault%20Clio%205" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors">
+                                <i class="fab fa-whatsapp mr-1"></i>
+                                Réserver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/peugot_208.png" alt="Location Peugeot 208 Essaouira - Medridatours 30 € / Jour/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Peugeot 208</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-cog text-blue-500"></i>
+                                <span class="font-semibold">Transmission:</span>
+                                <span>Manuelle</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-car-side text-purple-500"></i>
+                                <span class="font-semibold">Type:</span>
+                                <span>Citadine – Coffre 311 L</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-gas-pump text-green-500"></i>
+                                <span class="font-semibold">Carburant:</span>
+                                <span>Essence / Diesel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">30 € / Jour</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20Peugeot%20208" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors">
+                                <i class="fab fa-whatsapp mr-1"></i>
+                                Réserver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/dacia_dokker.jpg" alt="Location Dacia Dokker Essaouira - Medridatours 30 € / Jour/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Dacia Dokker</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-cog text-blue-500"></i>
+                                <span class="font-semibold">Transmission:</span>
+                                <span>Manuelle</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-car-side text-purple-500"></i>
+                                <span class="font-semibold">Type:</span>
+                                <span>Utilitaire / Familiale – Grand coffre</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-gas-pump text-green-500"></i>
+                                <span class="font-semibold">Carburant:</span>
+                                <span>Diesel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">30 € / Jour</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20Dacia%20Dokker" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors">
+                                <i class="fab fa-whatsapp mr-1"></i>
+                                Réserver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/Hyundai-i10.jpg" alt="Location Hyundai i10 Essaouira - Medridatours 30 € / Jour/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Hyundai i10</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-cog text-blue-500"></i>
+                                <span class="font-semibold">Transmission:</span>
+                                <span>Automatique</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-car-side text-purple-500"></i>
+                                <span class="font-semibold">Type:</span>
+                                <span>Mini Citadine – Coffre 252 L</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-gas-pump text-green-500"></i>
+                                <span class="font-semibold">Carburant:</span>
+                                <span>Essence</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">30 € / Jour</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20Hyundai%20i10" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors">
+                                <i class="fab fa-whatsapp mr-1"></i>
+                                Réserver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/Kia-Sportage.jpeg" alt="Location Kia Sportage Essaouira - Medridatours 90 € / Jour/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Kia Sportage</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-cog text-blue-500"></i>
+                                <span class="font-semibold">Transmission:</span>
+                                <span>Automatique</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-car-side text-purple-500"></i>
+                                <span class="font-semibold">Type:</span>
+                                <span>SUV Confort – Coffre 591 L</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-gas-pump text-green-500"></i>
+                                <span class="font-semibold">Carburant:</span>
+                                <span>Essence / Hybride</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">90 € / Jour</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20Kia%20Sportage" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors">
+                                <i class="fab fa-whatsapp mr-1"></i>
+                                Réserver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/Jeep-Renegade.png" alt="Location Jeep Renegade Essaouira - Medridatours 55 € / Jour/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Jeep Renegade</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-cog text-blue-500"></i>
+                                <span class="font-semibold">Transmission:</span>
+                                <span>Manuelle</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-car-side text-purple-500"></i>
+                                <span class="font-semibold">Type:</span>
+                                <span>SUV Aventure – Coffre 351 L</span>
+                            </div>
+                            <div class="flex items-center gap-2 justify-center">
+                                <i class="fas fa-gas-pump text-green-500"></i>
+                                <span class="font-semibold">Carburant:</span>
+                                <span>Essence / Diesel</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4">
+                            <span class="text-2xl font-bold text-blue-600">55 € / Jour</span>
+                        </div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20Jeep%20Renegade" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors">
+                                <i class="fab fa-whatsapp mr-1"></i>
+                                Réserver
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Medridatours</h3>
+                    <p class="text-gray-300 mb-4">
+                        Votre partenaire de confiance pour la location de voitures à Essaouira, Maroc.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/212629473725" target="_blank" class="text-green-400 hover:text-green-300">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                        <a href="tel:+212629473725" class="text-blue-400 hover:text-blue-300">
+                            <i class="fas fa-phone text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-300 hover:text-white">Accueil</a></li>
+                        <li><a href="/fleet/" class="text-gray-300 hover:text-white">Notre Flotte</a></li>
+                        <li><a href="/about/" class="text-gray-300 hover:text-white">À Propos</a></li>
+                        <li><a href="/contact/" class="text-gray-300 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Nos Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Location de véhicules</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Transport touristique</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Avec caution</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Support 24/7</li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Essaouira, Maroc
+                        </li>
+                        <li>
+                            <i class="fas fa-phone mr-2"></i>
+                            <a href="tel:+212629473725" class="hover:text-white">+212 629 473725</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            <a href="https://wa.me/212629473725" target="_blank" class="hover:text-white">WhatsApp</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 Medridatours. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/212629473725" target="_blank" class="whatsapp-float bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            console.log('Mobile menu button:', mobileMenuBtn);
+            console.log('Mobile menu:', mobileMenu);
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    console.log('Mobile menu button clicked');
+                    
+                    // Toggle display style directly
+                    if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                        mobileMenu.style.display = 'block';
+                        console.log('Menu opened');
+                    } else {
+                        mobileMenu.style.display = 'none';
+                        console.log('Menu closed');
+                    }
+                });
+            } else {
+                console.log('Mobile menu elements not found');
+            }
+        });
+    </script>
+    
+    <!-- Professional Reviews System -->
+    <script src="/static/js/reviews-system.js"></script>
+    
+    
+</body>
+</html>

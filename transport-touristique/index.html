@@ -1,0 +1,602 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Touristique - Medridatours</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Location de voiture Essaouira ✓ Agence Medridatours Maroc ✓ Véhicules modernes climatisés ✓ Livraison aéroport gratuite ✓ Avec caution ✓ Réservation WhatsApp 24h/24">
+    <meta name="keywords" content="location voiture essaouira, location de voiture essaouira maroc, car rental essaouira, agence location voiture essaouira, medridatours, rent car essaouira morocco, location auto essaouira, location véhicule essaouira">
+    <meta name="author" content="Medridatours">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="MA-ESI">
+    <meta name="geo.placename" content="Essaouira, Morocco">
+    <meta name="geo.position" content="31.5125;-9.7709">
+    <meta name="ICBM" content="31.5125, -9.7709">
+    <meta name="google-site-verification" content="">
+    <meta name="theme-color" content="#3B82F6">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Location de Voiture Essaouira - Medridatours Maroc">
+    <meta property="og:description" content="Agence location voiture Essaouira ✓ Véhicules neufs avec climatisation ✓ Livraison aéroport gratuite ✓ Service avec caution ✓ Réservation WhatsApp">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://testserver/transport-touristique/">
+    <meta property="og:image" content="/static/images/LOGO%20NOIR%20.jpg">
+    <meta property="og:site_name" content="Medridatours">
+    <meta property="og:locale" content="fr_MA">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CarRental",
+        "name": "Medridatours",
+        "description": "Agence de location de voitures à Essaouira, Maroc. Véhicules modernes avec climatisation, service avec caution.",
+        "url": "https://medridatours.com",
+        "logo": "/static/images/LOGO%20NOIR%20.jpg",
+        "image": "/static/images/LOGO%20NOIR%20.jpg",
+        "telephone": "+212629473725",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Essaouira",
+            "addressRegion": "Marrakech-Safi",
+            "addressCountry": "MA"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 31.5125,
+            "longitude": -9.7709
+        },
+        "openingHours": "Mo-Su 00:00-23:59",
+        "priceRange": "30€-90€",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Location de Voitures",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Car",
+                        "name": "Dacia Logan",
+                        "brand": "Dacia"
+                    },
+                    "price": "30",
+                    "priceCurrency": "EUR"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Car",
+                        "name": "Hyundai Tucson",
+                        "brand": "Hyundai"
+                    },
+                    "price": "82",
+                    "priceCurrency": "EUR"
+                }
+            ]
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+212629473725",
+            "contactType": "customer service",
+            "availableLanguage": ["French", "Arabic", "English"]
+        }
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="/static/images/LOGO%20NOIR%20.jpg" type="image/jpeg">
+    <link rel="icon" sizes="32x32" href="/static/images/LOGO%20NOIR%20.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="/static/images/LOGO%20NOIR%20.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/LOGO%20NOIR%20.jpg">
+    
+    <!-- Preload important images -->
+    <link rel="preload" href="/static/images/LOGO%20NOIR%20.jpg" as="image">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <!-- Custom JavaScript -->
+    <script src="/static/js/main.js" defer></script>
+    
+    
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center py-2">
+                        <img src="/static/images/LOGO%20NOIR%20.jpg" alt="Medridatours" class="h-12 w-auto max-w-none">
+                    </a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Accueil
+                        </a>
+                        <a href="/fleet/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Notre Flotte
+                        </a>
+                        <a href="/transport-touristique/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Transport Touristique
+                        </a>
+                        <a href="/about/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            À Propos
+                        </a>
+                        <a href="/contact/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-blue-600 focus:outline-none p-2 border border-gray-300 rounded">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+                
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/212629473725" target="_blank" class="hidden sm:inline-flex bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white border-t shadow-lg z-40" style="display: none;">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Accueil
+                </a>
+                <a href="/fleet/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Notre Flotte
+                </a>
+                <a href="/transport-touristique/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Transport Touristique
+                </a>
+                <a href="/about/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    À Propos
+                </a>
+                <a href="/contact/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Contact
+                </a>
+                <a href="https://wa.me/212629473725" target="_blank" class="text-green-600 hover:text-green-700 block px-3 py-2 text-base font-medium">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="pt-16">
+        
+<!-- Header -->
+<section class="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                Transport Touristique
+            </h1>
+            <p class="text-xl max-w-3xl mx-auto">
+                Découvrez le Maroc avec style grâce à nos services de transport touristique avec chauffeurs professionnels
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Services Overview -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">
+                Nos Services de Transport
+            </h2>
+            <p class="text-xl text-gray-600">
+                Mini-bus et véhicules de toutes tailles avec chauffeurs expérimentés
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Mini Bus Service -->
+            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+                <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-bus text-3xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-center mb-6 text-gray-800">Mini-Bus Touristique</h3>
+                
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center">
+                        <i class="fas fa-users text-blue-600 mr-3"></i>
+                        <span class="text-gray-700">Capacité: 8-16 passagers</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-user-tie text-blue-600 mr-3"></i>
+                        <span class="text-gray-700">Chauffeur professionnel inclus</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-snowflake text-blue-600 mr-3"></i>
+                        <span class="text-gray-700">Climatisation</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-route text-blue-600 mr-3"></i>
+                        <span class="text-gray-700">Circuits personnalisés</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-luggage-cart text-blue-600 mr-3"></i>
+                        <span class="text-gray-700">Espace bagages généreux</span>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="https://wa.me/212629473725?text=Bonjour Medridatours, je souhaite un devis pour transport en mini-bus." target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block w-full">
+                        <i class="fab fa-whatsapp mr-2"></i>Demander un Devis
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Large Cars Service -->
+            <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+                <div class="bg-purple-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-car text-3xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-center mb-6 text-gray-800">Véhicules Grand Confort</h3>
+                
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center">
+                        <i class="fas fa-users text-purple-600 mr-3"></i>
+                        <span class="text-gray-700">Capacité: 2-7 passagers</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-crown text-purple-600 mr-3"></i>
+                        <span class="text-gray-700">Véhicules haut de gamme</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-user-graduate text-purple-600 mr-3"></i>
+                        <span class="text-gray-700">Chauffeur expérimenté</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marked-alt text-purple-600 mr-3"></i>
+                        <span class="text-gray-700">Circuits sur mesure</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-wifi text-purple-600 mr-3"></i>
+                        <span class="text-gray-700">Confort optimal</span>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="https://wa.me/212629473725?text=Bonjour, je souhaite un véhicule avec chauffeur pour du tourisme." target="_blank" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors inline-block w-full">
+                        <i class="fab fa-whatsapp mr-2"></i>Demander un Devis
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Small Cars Service -->
+            <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+                <div class="bg-green-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-car-side text-3xl text-white"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-center mb-6 text-gray-800">Véhicules Compacts</h3>
+                
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center">
+                        <i class="fas fa-users text-green-600 mr-3"></i>
+                        <span class="text-gray-700">Capacité: 2-4 passagers</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-dollar-sign text-green-600 mr-3"></i>
+                        <span class="text-gray-700">Solution économique</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-user-check text-green-600 mr-3"></i>
+                        <span class="text-gray-700">Chauffeur local expert</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-city text-green-600 mr-3"></i>
+                        <span class="text-gray-700">Parfait pour la ville</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-clock text-green-600 mr-3"></i>
+                        <span class="text-gray-700">Disponible 24h/24</span>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="https://wa.me/212629473725?text=Bonjour, je souhaite un véhicule compact avec chauffeur." target="_blank" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors inline-block w-full">
+                        <i class="fab fa-whatsapp mr-2"></i>Demander un Devis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Destinations & Services -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Popular Destinations -->
+            <div>
+                <h3 class="text-3xl font-bold text-gray-800 mb-8">Destinations Populaires</h3>
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-all">
+                        <i class="fas fa-map-marker-alt text-3xl text-red-500 mb-3"></i>
+                        <h4 class="font-bold text-lg">Marrakech</h4>
+                        <p class="text-gray-600 text-sm">La ville rouge</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-all">
+                        <i class="fas fa-map-marker-alt text-3xl text-blue-500 mb-3"></i>
+                        <h4 class="font-bold text-lg">Casablanca</h4>
+                        <p class="text-gray-600 text-sm">Métropole économique</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-all">
+                        <i class="fas fa-map-marker-alt text-3xl text-yellow-500 mb-3"></i>
+                        <h4 class="font-bold text-lg">Agadir</h4>
+                        <p class="text-gray-600 text-sm">Perle du Sud</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-all">
+                        <i class="fas fa-map-marker-alt text-3xl text-purple-500 mb-3"></i>
+                        <h4 class="font-bold text-lg">Ouarzazate</h4>
+                        <p class="text-gray-600 text-sm">Porte du désert</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="https://wa.me/212629473725?text=Bonjour, je souhaite organiser un circuit touristique personnalisé." target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                        <i class="fab fa-whatsapp mr-2"></i>Circuit Personnalisé
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Special Services -->
+            <div>
+                <h3 class="text-3xl font-bold text-gray-800 mb-8">Services Spéciaux</h3>
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-plane text-yellow-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Transferts Aéroport</h4>
+                                <p class="text-gray-600 mb-3">Service 24h/24 avec suivi des vols et accueil personnalisé</p>
+                                <a href="https://wa.me/212629473725?text=Je souhaite réserver un transfert aéroport." target="_blank" class="text-green-600 font-semibold hover:text-green-700">
+                                    <i class="fab fa-whatsapp mr-1"></i>Réserver
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-start">
+                            <div class="bg-pink-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-heart text-pink-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Événements Spéciaux</h4>
+                                <p class="text-gray-600 mb-3">Mariages, anniversaires, événements d'entreprise</p>
+                                <a href="https://wa.me/212629473725?text=Je souhaite du transport pour un événement spécial." target="_blank" class="text-green-600 font-semibold hover:text-green-700">
+                                    <i class="fab fa-whatsapp mr-1"></i>Planifier
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex items-start">
+                            <div class="bg-indigo-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-calendar-alt text-indigo-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Circuits Multi-jours</h4>
+                                <p class="text-gray-600 mb-3">Transport pour vos circuits de plusieurs jours au Maroc</p>
+                                <a href="https://wa.me/212629473725?text=Je souhaite organiser un transport pour circuit de plusieurs jours." target="_blank" class="text-green-600 font-semibold hover:text-green-700">
+                                    <i class="fab fa-whatsapp mr-1"></i>Découvrir
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-16 bg-blue-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">
+                Pourquoi Choisir Medridatours ?
+            </h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-user-graduate text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Chauffeurs Experts</h3>
+                <p class="text-blue-100">Professionnels expérimentés et connaisseurs du Maroc</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-shield-alt text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Sécurité Garantie</h3>
+                <p class="text-blue-100">Véhicules assurés et maintenance régulière</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-clock text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Disponibilité 24/7</h3>
+                <p class="text-blue-100">Service client et assistance à toute heure</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="bg-white bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-heart text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Service Personnalisé</h3>
+                <p class="text-blue-100">Chaque voyage adapté à vos besoins</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">
+            Prêt pour Votre Aventure ?
+        </h2>
+        <p class="text-xl text-gray-600 mb-8">
+            Contactez-nous maintenant pour un devis personnalisé et gratuit
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://wa.me/212629473725?text=Bonjour Medridatours, je souhaite des informations sur vos services de transport touristique." target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors text-lg">
+                <i class="fab fa-whatsapp mr-2"></i>Devis Gratuit WhatsApp
+            </a>
+            <a href="tel:+212629473725" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors text-lg">
+                <i class="fas fa-phone mr-2"></i>Appeler Maintenant
+            </a>
+        </div>
+        <p class="text-gray-500 mt-4">
+            Pas de prix affichés - Chaque devis est personnalisé selon vos besoins
+        </p>
+    </div>
+</section>
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Medridatours</h3>
+                    <p class="text-gray-300 mb-4">
+                        Votre partenaire de confiance pour la location de voitures à Essaouira, Maroc.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/212629473725" target="_blank" class="text-green-400 hover:text-green-300">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                        <a href="tel:+212629473725" class="text-blue-400 hover:text-blue-300">
+                            <i class="fas fa-phone text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-300 hover:text-white">Accueil</a></li>
+                        <li><a href="/fleet/" class="text-gray-300 hover:text-white">Notre Flotte</a></li>
+                        <li><a href="/about/" class="text-gray-300 hover:text-white">À Propos</a></li>
+                        <li><a href="/contact/" class="text-gray-300 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Nos Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Location de véhicules</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Transport touristique</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Avec caution</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Support 24/7</li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Essaouira, Maroc
+                        </li>
+                        <li>
+                            <i class="fas fa-phone mr-2"></i>
+                            <a href="tel:+212629473725" class="hover:text-white">+212 629 473725</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            <a href="https://wa.me/212629473725" target="_blank" class="hover:text-white">WhatsApp</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 Medridatours. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/212629473725" target="_blank" class="whatsapp-float bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            console.log('Mobile menu button:', mobileMenuBtn);
+            console.log('Mobile menu:', mobileMenu);
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    console.log('Mobile menu button clicked');
+                    
+                    // Toggle display style directly
+                    if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                        mobileMenu.style.display = 'block';
+                        console.log('Menu opened');
+                    } else {
+                        mobileMenu.style.display = 'none';
+                        console.log('Menu closed');
+                    }
+                });
+            } else {
+                console.log('Mobile menu elements not found');
+            }
+        });
+    </script>
+    
+    <!-- Professional Reviews System -->
+    <script src="/static/js/reviews-system.js"></script>
+    
+    
+</body>
+</html>

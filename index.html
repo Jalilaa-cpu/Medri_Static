@@ -1,0 +1,802 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location de Voiture Essaouira | Agence Medridatours Maroc - Car Rental</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="🚗 Location de voiture Essaouira avec Medridatours ✓ Agence locale de confiance ✓ Véhicules neufs climatisés ✓ Livraison aéroport gratuite ✓ Réservation WhatsApp 24h/24 ✓ Avec caution">
+    <meta name="keywords" content="location voiture essaouira, location de voiture essaouira maroc, car rental essaouira, agence location voiture essaouira, medridatours, rent car essaouira morocco, location auto essaouira, location véhicule essaouira">
+    <meta name="author" content="Medridatours">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="MA-ESI">
+    <meta name="geo.placename" content="Essaouira, Morocco">
+    <meta name="geo.position" content="31.5125;-9.7709">
+    <meta name="ICBM" content="31.5125, -9.7709">
+    <meta name="google-site-verification" content="">
+    <meta name="theme-color" content="#3B82F6">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Location de Voiture Essaouira - Medridatours Maroc">
+    <meta property="og:description" content="Agence location voiture Essaouira ✓ Véhicules neufs avec climatisation ✓ Livraison aéroport gratuite ✓ Service avec caution ✓ Réservation WhatsApp">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://testserver/">
+    <meta property="og:image" content="/static/images/LOGO%20NOIR%20.jpg">
+    <meta property="og:site_name" content="Medridatours">
+    <meta property="og:locale" content="fr_MA">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CarRental",
+        "name": "Medridatours",
+        "description": "Agence de location de voitures à Essaouira, Maroc. Véhicules modernes avec climatisation, service avec caution.",
+        "url": "https://medridatours.com",
+        "logo": "/static/images/LOGO%20NOIR%20.jpg",
+        "image": "/static/images/LOGO%20NOIR%20.jpg",
+        "telephone": "+212629473725",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Essaouira",
+            "addressRegion": "Marrakech-Safi",
+            "addressCountry": "MA"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 31.5125,
+            "longitude": -9.7709
+        },
+        "openingHours": "Mo-Su 00:00-23:59",
+        "priceRange": "30€-90€",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Location de Voitures",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Car",
+                        "name": "Dacia Logan",
+                        "brand": "Dacia"
+                    },
+                    "price": "30",
+                    "priceCurrency": "EUR"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Car",
+                        "name": "Hyundai Tucson",
+                        "brand": "Hyundai"
+                    },
+                    "price": "82",
+                    "priceCurrency": "EUR"
+                }
+            ]
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+212629473725",
+            "contactType": "customer service",
+            "availableLanguage": ["French", "Arabic", "English"]
+        }
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="/static/images/LOGO%20NOIR%20.jpg" type="image/jpeg">
+    <link rel="icon" sizes="32x32" href="/static/images/LOGO%20NOIR%20.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="/static/images/LOGO%20NOIR%20.jpg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/LOGO%20NOIR%20.jpg">
+    
+    <!-- Preload important images -->
+    <link rel="preload" href="/static/images/LOGO%20NOIR%20.jpg" as="image">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <!-- Custom JavaScript -->
+    <script src="/static/js/main.js" defer></script>
+    
+    
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center py-2">
+                        <img src="/static/images/LOGO%20NOIR%20.jpg" alt="Medridatours" class="h-12 w-auto max-w-none">
+                    </a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Accueil
+                        </a>
+                        <a href="/fleet/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Notre Flotte
+                        </a>
+                        <a href="/transport-touristique/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Transport Touristique
+                        </a>
+                        <a href="/about/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            À Propos
+                        </a>
+                        <a href="/contact/" class="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-blue-600 focus:outline-none p-2 border border-gray-300 rounded">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+                
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/212629473725" target="_blank" class="hidden sm:inline-flex bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden bg-white border-t shadow-lg z-40" style="display: none;">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Accueil
+                </a>
+                <a href="/fleet/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Notre Flotte
+                </a>
+                <a href="/transport-touristique/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Transport Touristique
+                </a>
+                <a href="/about/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    À Propos
+                </a>
+                <a href="/contact/" class="text-gray-600 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+                    Contact
+                </a>
+                <a href="https://wa.me/212629473725" target="_blank" class="text-green-600 hover:text-green-700 block px-3 py-2 text-base font-medium">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="pt-16">
+        
+<!-- Hero Section -->
+<section class="relative h-screen flex items-center justify-center" style="background: url('/static/images/site_background.png') center center/cover no-repeat;">
+  <div class="relative text-center px-4 max-w-2xl space-y-8 z-10 drop-shadow-2xl">
+    <span class="inline-block bg-white/20 text-white text-base md:text-lg px-4 py-2 rounded-full font-semibold tracking-wide mb-2 shadow-lg">Bienvenue chez Medridatours</span>
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg">Location de Voiture Essaouira</h1>
+    <p class="text-lg md:text-2xl text-blue-100 font-medium">Agence Medridatours - Votre spécialiste location de voiture à Essaouira, Maroc. Véhicules modernes climatisés, livraison aéroport gratuite, service avec caution.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mt-6">
+      <a href="/fleet/" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg transition">Je découvre →</a>
+      <a href="https://wa.me/212629473725" target="_blank" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-semibold flex items-center justify-center text-lg shadow-lg transition">
+        <i class="fab fa-whatsapp mr-2"></i> Réserver
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                Pourquoi Choisir Medridatours pour Votre Location de Voiture à Essaouira ?
+            </h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Agence locale de location de voiture Essaouira. Service professionnel, véhicules entretenus, tarifs transparents avec caution.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-clock text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Support 24/7</h3>
+                <p class="text-gray-600">Notre équipe est disponible 24h/24 pour vous assister.</p>
+            </div>
+            
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+                <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-plane text-2xl text-green-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Livraison Gratuite</h3>
+                <p class="text-gray-600">Livraison gratuite à l'aéroport d'Essaouira.</p>
+            </div>
+            
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+                <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-credit-card text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Avec Caution</h3>
+                <p class="text-gray-600">Location professionnelle avec garantie de caution.</p>
+            </div>
+            
+            <div class="text-center p-6 bg-gray-50 rounded-lg">
+                <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-shield-alt text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Assurance Complète</h3>
+                <p class="text-gray-600">Tous nos véhicules sont entièrement assurés.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Vehicles -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                Notre Flotte de Location de Voiture Essaouira
+            </h2>
+            <p class="text-xl text-gray-600">
+                Véhicules modernes et entretenus disponibles pour location à Essaouira. Climatisation, assurance complète incluse.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Four static featured cars -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/dacia_logan.png" alt="Location Dacia Logan Essaouira - Medridatours sedan 30€/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm font-semibold">Vedette</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Dacia Logan</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center"><i class="fas fa-cog text-blue-500"></i><span class="font-semibold">Transmission:</span><span>Automatique</span></div>
+                            <div class="flex items-center gap-2 justify-center"><i class="fas fa-car-side text-purple-500"></i><span class="font-semibold">Type:</span><span>Sedan – Coffre 528 L</span></div>
+                            <div class="flex items-center gap-2 justify-center"><i class="fas fa-gas-pump text-green-500"></i><span class="font-semibold">Carburant:</span><span>Essence / Diesel</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4"><span class="text-2xl font-bold text-blue-600">30 € / Jour</span></div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20Dacia%20Logan" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors"><i class="fab fa-whatsapp mr-1"></i>Réserver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/dacia-duster.png" alt="Location Dacia Duster Essaouira - Medridatours SUV 40€/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm font-semibold">Vedette</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Dacia Duster</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center"><i class="fas fa-cog text-blue-500"></i><span class="font-semibold">Transmission:</span><span>Manuelle</span></div>
+                            <div class="flex items-center gap-2 justify-center"><i class="fas fa-car-side text-purple-500"></i><span class="font-semibold">Type:</span><span>SUV Compact – Coffre 445 L</span></div>
+                            <div class="flex items-center gap-2 justify-center"><i class="fas fa-gas-pump text-green-500"></i><span class="font-semibold">Carburant:</span><span>Diesel / Essence</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4"><span class="text-2xl font-bold text-blue-600">40 € / Jour</span></div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20Dacia%20Duster" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors"><i class="fab fa-whatsapp mr-1"></i>Réserver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/hyundai_tukson.png" alt="Location Hyundai Tucson Essaouira - Medridatours SUV premium 82€/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm font-semibold">Vedette</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Hyundai Tucson</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center"><i class="fas fa-cog text-blue-500"></i><span class="font-semibold">Transmission:</span><span>Automatique</span></div>
+                            <div class="flex items-center gap-2 justify-center"><i class="fas fa-car-side text-purple-500"></i><span class="font-semibold">Type:</span><span>SUV Familial – Coffre 620 L</span></div>
+                            <div class="flex items-center gap-2 justify-center"><i class="fas fa-gas-pump text-green-500"></i><span class="font-semibold">Carburant:</span><span>Hybride / Essence</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4"><span class="text-2xl font-bold text-blue-600">82 € / Jour</span></div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20Hyundai%20Tucson" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors"><i class="fab fa-whatsapp mr-1"></i>Réserver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 flex flex-col h-full min-h-[420px]">
+                <div class="relative flex justify-center items-center bg-gray-100" style="padding: 32px 0 24px 0; min-height: 180px;">
+                    <img src="/static/images/dacia_lodgy.png" alt="Location Dacia Lodgy 7 places Essaouira - Medridatours familial 45€/jour" class="w-11/12 h-44 object-contain rounded-xl shadow-md border border-gray-200 transition-transform duration-300 hover:scale-105 bg-white">
+                    <div class="absolute top-4 right-4">
+                        <span class="bg-blue-600 text-white px-2 py-1 rounded text-sm font-semibold">Vedette</span>
+                    </div>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">Dacia Lodgy</h3>
+                        <div class="space-y-2 text-sm text-gray-600 mb-6">
+                            <div class="flex items-center gap-2 justify-center"><i class="fas fa-cog text-blue-500"></i><span class="font-semibold">Transmission:</span><span>Automatique</span></div>
+                            <div class="flex items-center gap-2 justify-center"><i class="fas fa-car-side text-purple-500"></i><span class="font-semibold">Type:</span><span>7 Places – Coffre modulable</span></div>
+                            <div class="flex items-center gap-2 justify-center"><i class="fas fa-gas-pump text-green-500"></i><span class="font-semibold">Carburant:</span><span>Diesel / Essence</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-center items-center mb-4"><span class="text-2xl font-bold text-blue-600">45 € / Jour</span></div>
+                        <div class="flex gap-2">
+                            <a href="https://wa.me/212629473725?text=Bonjour%2C%20je%20souhaite%20réserver%20la%20Dacia%20Lodgy" target="_blank" class="flex-1 bg-green-500 text-white text-center py-2 rounded hover:bg-green-600 transition-colors"><i class="fab fa-whatsapp mr-1"></i>Réserver</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="/fleet/" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                Voir Tous les Véhicules
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Transport Touristique Preview -->
+<section id="transport-touristique" class="py-16 bg-blue-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                Transport Touristique
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Découvrez le Maroc avec nos services de transport touristique professionnels
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <!-- Mini Bus Preview -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+                <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-bus text-2xl text-blue-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Mini-Bus</h3>
+                <p class="text-gray-600 mb-4">Groupes de 8-16 personnes avec chauffeur professionnel</p>
+            </div>
+            
+            <!-- Cars Preview -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+                <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-car text-2xl text-purple-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Véhicules avec Chauffeur</h3>
+                <p class="text-gray-600 mb-4">Petites et grandes voitures pour tous vos besoins</p>
+            </div>
+            
+            <!-- Airport Transfer Preview -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+                <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-plane text-2xl text-yellow-600"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Transferts Aéroport</h3>
+                <p class="text-gray-600 mb-4">Service 24h/24 avec suivi des vols</p>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/transport-touristique/" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                    Voir Tous les Services
+                </a>
+                <a href="https://wa.me/212629473725?text=Bonjour, je souhaite des informations sur le transport touristique." target="_blank" class="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors">
+                    <i class="fab fa-whatsapp mr-2"></i>Contact WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Reviews Section - Pure JavaScript -->
+<section id="reviews-section" class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="flex items-center justify-between mb-8">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
+                    Avis Clients
+                </h2>
+                <p class="text-gray-600">
+                    Ce que nos clients pensent de nos services
+                </p>
+            </div>
+            
+            <!-- Add Review Button -->
+            <button onclick="openReviewModal()" id="add-review-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors flex items-center">
+                <i class="fas fa-plus mr-2"></i>
+                Laisser un avis
+            </button>
+        </div>
+        
+        <!-- Reviews Grid - Populated by JavaScript -->
+        <div id="reviews-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Loading placeholder -->
+            <div id="reviews-loading" class="col-span-full text-center py-8">
+                <i class="fas fa-spinner fa-spin text-2xl text-gray-400 mb-2"></i>
+                <p class="text-gray-500">Chargement des avis...</p>
+            </div>
+        </div>
+        
+        <!-- No reviews message (hidden by default, shown by JS if needed) -->
+        <div id="no-reviews-message" class="hidden text-center py-8 bg-white rounded-lg shadow-sm border border-gray-200">
+            <i class="fas fa-comments text-3xl text-gray-300 mb-3"></i>
+            <h3 class="text-lg font-medium text-gray-600 mb-1">Soyez le premier à laisser un avis !</h3>
+            <p class="text-gray-500 text-sm">Partagez votre expérience avec nos services</p>
+        </div>
+    </div>
+</section>
+
+<!-- Review Modal -->
+<div id="review-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+        <!-- Modal Header -->
+        <div class="flex items-center justify-between p-6 border-b border-gray-200">
+            <h3 class="text-xl font-bold text-gray-800">
+                Partager Votre Expérience
+            </h3>
+            <button onclick="closeReviewModal()" class="text-gray-400 hover:text-gray-600 text-2xl">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <!-- Modal Content -->
+        <div class="p-6">
+            <form id="review-form" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Name Field -->
+                    <div>
+                        <label for="review-name" class="block text-sm font-medium text-gray-700 mb-1">
+                            Nom complet <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="review-name" name="name" required 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    
+                    <!-- Email Field -->
+                    <div>
+                        <label for="review-email" class="block text-sm font-medium text-gray-700 mb-1">
+                            Courriel
+                        </label>
+                        <input type="email" id="review-email" name="email" 
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Location Field -->
+                    <div>
+                        <label for="review-location" class="block text-sm font-medium text-gray-700 mb-1">
+                            Ville/Pays
+                        </label>
+                        <input type="text" id="review-location" name="location" 
+                               placeholder="Ex: Casablanca, Maroc"
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                    
+                    <!-- Vehicle Field -->
+                    <div>
+                        <label for="review-vehicle" class="block text-sm font-medium text-gray-700 mb-1">
+                            Véhicule loué
+                        </label>
+                        <input type="text" id="review-vehicle" name="vehicle_rented" 
+                               placeholder="Ex: Dacia Logan"
+                               class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    </div>
+                </div>
+                
+                <!-- Rating Field -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-3">
+                        Votre note <span class="text-red-500">*</span>
+                    </label>
+                    <div class="flex space-x-2">
+                        <div class="rating-stars flex space-x-1">
+                            <button type="button" class="star text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none" data-rating="1">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button type="button" class="star text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none" data-rating="2">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button type="button" class="star text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none" data-rating="3">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button type="button" class="star text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none" data-rating="4">
+                                <i class="fas fa-star"></i>
+                            </button>
+                            <button type="button" class="star text-2xl text-gray-300 hover:text-yellow-400 focus:outline-none" data-rating="5">
+                                <i class="fas fa-star"></i>
+                            </button>
+                        </div>
+                        <span id="rating-text" class="text-sm text-gray-500 ml-3"></span>
+                    </div>
+                    <input type="hidden" id="review-rating" name="rating" required>
+                </div>
+                
+                <!-- Content Field -->
+                <div>
+                    <label for="review-content" class="block text-sm font-medium text-gray-700 mb-1">
+                        Votre témoignage <span class="text-red-500">*</span>
+                    </label>
+                    <textarea id="review-content" name="content" rows="4" required 
+                              placeholder="Partagez votre expérience avec nos services..."
+                              class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"></textarea>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="flex items-center justify-between pt-4">
+                    <p class="text-xs text-gray-500">
+                        * Champs obligatoires
+                    </p>
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Publier l'avis
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for Reviews System -->
+<script>
+// Modal functions called by buttons
+function openReviewModal() {
+    document.getElementById('review-modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+function closeReviewModal() {
+    document.getElementById('review-modal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+    document.getElementById('review-form').reset();
+    resetStarRating();
+}
+
+// Close modal when clicking outside
+document.getElementById('review-modal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeReviewModal();
+    }
+});
+
+// Close modal with ESC key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !document.getElementById('review-modal').classList.contains('hidden')) {
+        closeReviewModal();
+    }
+});
+
+// Star rating functionality
+function resetStarRating() {
+    const stars = document.querySelectorAll('.star');
+    stars.forEach(star => {
+        star.classList.remove('text-yellow-400');
+        star.classList.add('text-gray-300');
+    });
+    document.getElementById('review-rating').value = '';
+    document.getElementById('rating-text').textContent = '';
+}
+
+// Initialize star rating
+document.addEventListener('DOMContentLoaded', function() {
+    const stars = document.querySelectorAll('.star');
+    const ratingText = document.getElementById('rating-text');
+    const ratingLabels = ['Très décevant', 'Décevant', 'Correct', 'Très bien', 'Excellent'];
+    
+    stars.forEach((star, index) => {
+        star.addEventListener('click', function() {
+            const rating = parseInt(this.dataset.rating);
+            document.getElementById('review-rating').value = rating;
+            
+            // Update star colors
+            stars.forEach((s, i) => {
+                if (i < rating) {
+                    s.classList.remove('text-gray-300');
+                    s.classList.add('text-yellow-400');
+                } else {
+                    s.classList.remove('text-yellow-400');
+                    s.classList.add('text-gray-300');
+                }
+            });
+            
+            // Update rating text
+            ratingText.textContent = ratingLabels[rating - 1];
+        });
+        
+        // Hover effect
+        star.addEventListener('mouseenter', function() {
+            const rating = parseInt(this.dataset.rating);
+            stars.forEach((s, i) => {
+                if (i < rating) {
+                    s.classList.add('text-yellow-300');
+                } else {
+                    s.classList.remove('text-yellow-300');
+                }
+            });
+        });
+        
+        star.addEventListener('mouseleave', function() {
+            stars.forEach(s => {
+                s.classList.remove('text-yellow-300');
+            });
+        });
+    });
+});
+</script>
+
+<!-- CTA Section -->
+<section class="bg-blue-600 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Prêt à Explorer Essaouira ?
+        </h2>
+        <p class="text-xl mb-8">
+            Contactez-nous dès maintenant pour réserver votre véhicule
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https://wa.me/212629473725" target="_blank" class="bg-green-500 hover:bg-green-600 px-8 py-3 rounded-lg font-semibold transition-colors">
+                <i class="fab fa-whatsapp mr-2"></i>
+                Réserver via WhatsApp
+            </a>
+            <a href="/contact/" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                Nous Contacter
+            </a>
+        </div>
+    </div>
+</section>
+
+
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Medridatours</h3>
+                    <p class="text-gray-300 mb-4">
+                        Votre partenaire de confiance pour la location de voitures à Essaouira, Maroc.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/212629473725" target="_blank" class="text-green-400 hover:text-green-300">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </a>
+                        <a href="tel:+212629473725" class="text-blue-400 hover:text-blue-300">
+                            <i class="fas fa-phone text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Liens Rapides</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="text-gray-300 hover:text-white">Accueil</a></li>
+                        <li><a href="/fleet/" class="text-gray-300 hover:text-white">Notre Flotte</a></li>
+                        <li><a href="/about/" class="text-gray-300 hover:text-white">À Propos</a></li>
+                        <li><a href="/contact/" class="text-gray-300 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Nos Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Location de véhicules</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Transport touristique</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Avec caution</li>
+                        <li><i class="fas fa-check mr-2 text-green-400"></i>Support 24/7</li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Essaouira, Maroc
+                        </li>
+                        <li>
+                            <i class="fas fa-phone mr-2"></i>
+                            <a href="tel:+212629473725" class="hover:text-white">+212 629 473725</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp mr-2"></i>
+                            <a href="https://wa.me/212629473725" target="_blank" class="hover:text-white">WhatsApp</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2025 Medridatours. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating WhatsApp Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/212629473725" target="_blank" class="whatsapp-float bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            console.log('Mobile menu button:', mobileMenuBtn);
+            console.log('Mobile menu:', mobileMenu);
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    console.log('Mobile menu button clicked');
+                    
+                    // Toggle display style directly
+                    if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
+                        mobileMenu.style.display = 'block';
+                        console.log('Menu opened');
+                    } else {
+                        mobileMenu.style.display = 'none';
+                        console.log('Menu closed');
+                    }
+                });
+            } else {
+                console.log('Mobile menu elements not found');
+            }
+        });
+    </script>
+    
+    <!-- Professional Reviews System -->
+    <script src="/static/js/reviews-system.js"></script>
+    
+    
+</body>
+</html>
